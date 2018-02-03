@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+    </rowConstraints>
+    <children>
+        <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="312.0" prefWidth="461.0" GridPane.columnIndex="1">
+            <children>
+                <Label layoutX="96.0" layoutY="78.0" text="Input Scale" />
+                <Label layoutX="268.0" layoutY="78.0" text="Output Scale" />
+                <Label layoutX="173.0" layoutY="29.0" text="Input" />
+                <Label layoutX="173.0" layoutY="224.0" text="Output" />
+                <TextField fx:id="TextFieldInput" layoutX="220.0" layoutY="25.0" prefHeight="25.0" prefWidth="69.0" />
+                <TextField fx:id="TextFieldOutput" layoutX="220.0" layoutY="220.0" prefHeight="27.0" prefWidth="158.0" text="" />
+                <Group layoutX="70.0" layoutY="96.0">
+                    <children>
+                        <Pane prefHeight="112.0" prefWidth="119.0">
+                            <children>
+                                <RadioButton fx:id="CelciusInput" layoutX="23.0" layoutY="13.0" mnemonicParsing="false" onAction="#onActionCelciusInput" text="Celcius">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="Group" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <RadioButton fx:id="FahrenheitInput" layoutX="24.0" layoutY="48.0" mnemonicParsing="false" onAction="#onActionFahrenheitInput" text="Fahrenheit" toggleGroup="$Group" />
+                                <RadioButton fx:id="KelvinInput" layoutX="25.0" layoutY="83.0" mnemonicParsing="false" onAction="#onActionKelvinInput" selected="true" text="Kelvin" toggleGroup="$Group" />
+                            </children>
+                        </Pane>
+                    </children>
+                </Group>
+                <Pane layoutX="248.0" layoutY="96.0" prefHeight="112.0" prefWidth="109.0">
+                    <children>
+                        <RadioButton fx:id="CelciusOutput" layoutX="26.0" layoutY="12.0" mnemonicParsing="false" onAction="#onActionCelciusOutput" text="Celcius">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="Pane" />
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="FahrenheitOutput" layoutX="25.0" layoutY="46.0" mnemonicParsing="false" onAction="#onActionFahrenheitOutput" text="Fahrenheit" toggleGroup="$Pane" />
+                        <RadioButton fx:id="KelvinOutput" layoutX="24.0" layoutY="77.0" mnemonicParsing="false" onAction="#onActionKelvinOutput" selected="false" text="Kelvin" toggleGroup="$Pane" />
+                    </children>
+                </Pane>
+            </children>
+         <effect>
+            <InnerShadow color="#4ca0e0" />
+         </effect></AnchorPane>
+    </children>
+</GridPane>
